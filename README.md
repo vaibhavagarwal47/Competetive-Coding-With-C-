@@ -1,2 +1,2 @@
-# Data-Structure-in-C-C-
+# Data-Structure-And-Algorithms-With-C/C++
 Questions of Data Structures
