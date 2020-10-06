@@ -63,6 +63,49 @@ void maxmin(int n, int a[10]){
     cout<<"\n\n";
 }
 
+void reverse(int n, int a[10]){
+    system("cls");
+    cout<<"\n\n Q3 Find the minimum and maximum element in an array.";
+    cout<<"\n\n Answers.";
+    cout<<"\n";
+
+    int start = 0, end = n-1;
+    while(start<end){
+        int temp = a[start];
+        a[start] = a[end];
+        a[end]   = temp;
+        start ++;
+        end --;
+
+    }
+
+    cout<<"reverse array is : ";
+    for (int i = 0; i < n; i++)
+    {
+        cout<<a[i]<<" ";
+    }
+    
+    cout<<"\n\n";
+    
+}
+
+void sort(int n, int a[10]){
+    system("cls");
+    cout<<"\n\n Q5 Write a program to sort the given array.";
+    cout<<"\n\nAnswer. ";
+    
+    for (int i = 0; i < n; i++)
+    {   int temp = 0;
+        for (int j = i+1; i < n; i++)
+        {
+            if(a[i])
+        }
+        
+    }
+    
+
+}
+
 int main(){
     system("cls");
     int n, a[10], t;
@@ -100,7 +143,11 @@ int main(){
         break;
     case 3:
         maxmin(n, a);
-    
+    case 4:
+        reverse(n, a);
+    case 5:
+        sort(n, a);
+        break;
     default:
         break;
     }
