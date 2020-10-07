@@ -61,6 +61,8 @@ void maxmin(int n, int a[10]){
     }
     cout<<"\n  Minimum element in array is = "<<min;
     cout<<"\n\n";
+   // return max, min;
+
 }
 
 void reverse(int n, int a[10]){
@@ -163,6 +165,49 @@ void occurence(int n, int a[10]){
     }
        
 }*/
+void range(int n, int a[10]){
+    system("cls");
+    cout<<"\n\n Q9 Find the range of the array. Range means the difference between the maximum and minimum element in the array.";
+    cout<<"\n\n Answer. ";
+    int max = a[0], min = a[0];
+    for (int i = 0; i < n; i++)
+    {
+        if(max<a[i])
+            max = a[i];
+    }
+    for (int i = 0; i < n; i++)
+    {
+        if(min>a[i])
+            min = a[i];
+    }
+    cout<<"   Range of array is : ";
+    cout<<max - min;
+    cout<<"\n\n";
+    
+
+}
+void movenegative(int n, int a[10]){
+    system("cls");
+    cout<<"\n\n Q10 Move all the negative elements to one side of the array.";
+    cout<<"\n\nAnswer. ";
+    int j = 0;
+    for (int i = 0; i < n; i++)
+    {
+        if(a[i]<0){
+            if(i!= j)
+                {int temp = a[i];
+                a[i] = a[j];
+                a[j] = temp;
+                j++;}
+        }
+    }
+    for (int i = 0; i < n; i++)
+    {
+        cout<<" "<<a[i]; 
+    }
+    cout<<"\n\n";
+
+}
 
 
 int main(){
@@ -214,7 +259,13 @@ int main(){
         occurence(n, a);
         break;
     case 8:
-        sorted(n, a);
+       // sorted(n, a);
+        break;
+    case 9:
+        range(n, a);
+        break;
+    case 10:
+        movenegative(n, a);
         break;
     default:
         main();
