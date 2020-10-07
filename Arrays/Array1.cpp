@@ -1,8 +1,10 @@
 #include<iostream>
 #include<conio.h>
+#include<algorithm>
 
 using namespace std;
-int main();
+void Questions(int n, int a[10]);
+
 void print(int n, int a[10]){
     system("cls");
     
@@ -13,6 +15,12 @@ void print(int n, int a[10]){
         cout<<a[i]<<" ";
     }
     cout<<"\n\n";
+    string des;
+    cout<<"\nReturn to main screen(y/n) ?  : ";
+    cin>>des;
+    if(des == "y" || des == "y")
+        Questions(n, a);
+
 }
 
 void find(int n, int a[10]){
@@ -34,6 +42,12 @@ void find(int n, int a[10]){
     }
     if(location != -1)
         cout <<"Element " <<search <<" is present at location "<<location<<"\n\n";
+    string des;
+    cout<<"\n\nReturn to main screen(y/n) ?  : ";
+    cin>>des;
+    if(des == "y" || des == "y")
+        Questions(n, a);
+
         
 }
 
@@ -60,7 +74,11 @@ void maxmin(int n, int a[10]){
             min = a[i];
     }
     cout<<"\n  Minimum element in array is = "<<min;
-    cout<<"\n\n";
+    string des;
+    cout<<"\n\nReturn to main screen(y/n) ?  : ";
+    cin>>des;
+    if(des == "y" || des == "y")
+        Questions(n, a);
    // return max, min;
 
 }
@@ -87,49 +105,49 @@ void reverse(int n, int a[10]){
         cout<<a[i]<<" ";
     }
     
-    cout<<"\n\n";
+    string des;
+    cout<<"\n\nReturn to main screen(y/n) ?  : ";
+    cin>>des;
+    if(des == "y" || des == "y")
+        Questions(n, a);
     
 }
 
-void sort(int n, int a[10]){
+void sorting(int n, int a[10]){
     system("cls");
     cout<<"\n\n Q5 Write a program to sort the given array.";
     cout<<"\n\nAnswer. ";
-    string decision;
-    for (int i = 0; i < n; i++)
-    {   
-        for (int j = i+1; j < n+1; j++)
-        {
-            if(a[j]<a[i]){
-                int temp = a[i];
-                a[i] = a[j];
-                a[j] = temp;
-            }
-        }
-        
-    }
+    sort(a, a+n);
     cout<<" The sorted array is : ";
     for (int k = 0; k < n; k++)
     {
         cout<<a[k]<<" ";
     }   
-    cout<<"\n\n"; 
+    string des;
+    cout<<"\n\nReturn to main screen(y/n) ?  : ";
+    cin>>des;
+    if(des == "y" || des == "y")
+        Questions(n, a);
 }
 void kthelement(int n, int a[10]){
-    sort(n, a);
+   // sort(n, a);
     system("cls");
+    sort(a, a+n);
     int k;
     cout<<"\n\n Q6 Find the Kth largest and Kth smallest number in an array.";
     cout<<"\n\nAnswer.";
-    cout<<" Enter the kth largest value: ";
+    cout<<">> Enter the kth largest value: ";
     cin>>k;
     cout<<"\n The Value of kth largest element: "<<a[k];
 
-    cout<<"\n\n Enter the kth smallest value: ";
+    cout<<"\n\n>> Enter the kth smallest value: ";
     cin>>k;
     cout<<"\n The Value of kth largest element: "<<a[k];
-
-    cout<<"\n\n";
+    string des;
+    cout<<"\n\nReturn to main screen(y/n) ?  : ";
+    cin>>des;
+    if(des == "y" || des == "y")
+        Questions(n, a);
 }
 void occurence(int n, int a[10]){
     system("cls");
@@ -145,7 +163,11 @@ void occurence(int n, int a[10]){
             flag++;
     }
     cout<<"\n\n      The value "<<occ<<" appear in the array for "<<flag<<" times.";
-    cout<<"\n\n";
+    string des;
+    cout<<"\n\nReturn to main screen(y/n) ?  : ";
+    cin>>des;
+    if(des == "y" || des == "y")
+        Questions(n, a);
     
 }
 /*void sorted(int n, int a[10]){
@@ -182,7 +204,11 @@ void range(int n, int a[10]){
     }
     cout<<"   Range of array is : ";
     cout<<max - min;
-    cout<<"\n\n";
+    string des;
+    cout<<"\n\nReturn to main screen(y/n) ?  : ";
+    cin>>des;
+    if(des == "y" || des == "y")
+        Questions(n, a);
     
 
 }
@@ -205,14 +231,18 @@ void movenegative(int n, int a[10]){
     {
         cout<<" "<<a[i]; 
     }
-    cout<<"\n\n";
+    string des;
+    cout<<"\n\nReturn to main screen(y/n) ?  : ";
+    cin>>des;
+    if(des == "y" || des == "y")
+        Questions(n, a);
 
 }
 
 
 int main(){
     system("cls");
-    int n, a[10], t;
+    int n, a[10];
     cout<<"Enter the size of array: ";
     cin>>n;
     cout<<"\nEnter the array: ";
@@ -221,9 +251,14 @@ int main(){
     {
         cin>>a[i];
     }
-    
+    Questions(n, a);
+    return 0;
+}
+
+void Questions(int n, int a[10])
+{
     system("cls");
-    
+    int t;
     cout<<"\n\n Q1 Create an Array of size 10 of integers.Take input from the user for these 10 elements and print the entire array after that.";
     cout<<"\n\n Q2 Check whether n is present in an array of size m or not.";
     cout<<"\n\n Q3 Find the minimum and maximum element in an array.";
@@ -247,10 +282,12 @@ int main(){
         break;
     case 3:
         maxmin(n, a);
+        break;
     case 4:
         reverse(n, a);
+        break;
     case 5:
-        sort(n, a);
+        sorting(n, a);
         break;
     case 6:
         kthelement(n, a);
@@ -271,5 +308,5 @@ int main(){
         main();
         break;
     }
-    return 0;
+
 }
