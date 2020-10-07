@@ -2,7 +2,7 @@
 #include<conio.h>
 
 using namespace std;
-
+int main();
 void print(int n, int a[10]){
     system("cls");
     
@@ -93,18 +93,77 @@ void sort(int n, int a[10]){
     system("cls");
     cout<<"\n\n Q5 Write a program to sort the given array.";
     cout<<"\n\nAnswer. ";
-    
+    string decision;
     for (int i = 0; i < n; i++)
-    {   int temp = 0;
-        for (int j = i+1; i < n; i++)
+    {   
+        for (int j = i+1; j < n+1; j++)
         {
-            if(a[i])
+            if(a[j]<a[i]){
+                int temp = a[i];
+                a[i] = a[j];
+                a[j] = temp;
+            }
         }
         
     }
-    
-
+    cout<<" The sorted array is : ";
+    for (int k = 0; k < n; k++)
+    {
+        cout<<a[k]<<" ";
+    }   
+    cout<<"\n\n"; 
 }
+void kthelement(int n, int a[10]){
+    sort(n, a);
+    system("cls");
+    int k;
+    cout<<"\n\n Q6 Find the Kth largest and Kth smallest number in an array.";
+    cout<<"\n\nAnswer.";
+    cout<<" Enter the kth largest value: ";
+    cin>>k;
+    cout<<"\n The Value of kth largest element: "<<a[k];
+
+    cout<<"\n\n Enter the kth smallest value: ";
+    cin>>k;
+    cout<<"\n The Value of kth largest element: "<<a[k];
+
+    cout<<"\n\n";
+}
+void occurence(int n, int a[10]){
+    system("cls");
+    cout<<"\n\n Q7 Given an number n. Find the number of occurrences of n in the array.";
+    cout<<"\n\nAnswers: ";
+    cout<<"  Enter the number you want to find appereances: ";
+    int occ, flag=0;
+    cin>>occ;
+
+    for (int i = 0; i < n; i++)
+    {
+        if(a[i]== occ)
+            flag++;
+    }
+    cout<<"\n\n      The value "<<occ<<" appear in the array for "<<flag<<" times.";
+    cout<<"\n\n";
+    
+}
+/*void sorted(int n, int a[10]){
+    system("cls");
+    cout<<"\n\n Q8 Given an array which consists of only 0, 1 and 2. Sort the array without using any sorting algorithm.";
+    cout<<"\n\nAnswers: ";
+    cout<<"\n\n         Enter the elements: ";
+    for (int i = 0; i < 3; i++)
+    {
+        cin>>a[i];
+    }
+    if(a[0]<a[1]){
+        if(a[0]<a[2])
+        {
+            int temp = 
+        }
+    }
+       
+}*/
+
 
 int main(){
     system("cls");
@@ -126,7 +185,7 @@ int main(){
     cout<<"\n\n Q4 Write a program to reverse the array.";    
     cout<<"\n\n Q5 Write a program to sort the given array.";
     cout<<"\n\n Q6 Find the Kth largest and Kth smallest number in an array.";
-    cout<<"\n\n Q7 Given an	number n. Find the number of occurrences of n in the array.";
+    cout<<"\n\n Q7 Given an number n. Find the number of occurrences of n in the array.";
     cout<<"\n\n Q8 Given an array which consists of only 0, 1 and 2. Sort the array without using any sorting algorithm.";
     cout<<"\n\n Q9 Find the range of the array. Range means the difference between the maximum and minimum element in the array.";
     cout<<"\n\n Q10 Move all the negative elements to one side of the array.";
@@ -148,7 +207,17 @@ int main(){
     case 5:
         sort(n, a);
         break;
+    case 6:
+        kthelement(n, a);
+        break;
+    case 7:
+        occurence(n, a);
+        break;
+    case 8:
+        sorted(n, a);
+        break;
     default:
+        main();
         break;
     }
     return 0;
