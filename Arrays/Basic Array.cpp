@@ -14,7 +14,7 @@
 
 #include<iostream>
 #include<conio.h>
-
+#include<algorithm>
 using namespace std;
 
 int main();
@@ -115,6 +115,27 @@ int deletion(int n, int a[100]){
     
     
 }
+int Update(int n, int a[100]){
+    cout<<"\n\n Enter the no u want to insert: ";
+    int no;
+    cin>>no;
+
+    n++;
+    a[n-1] = no;
+    sort(a, a+n);
+    for (int i = 0; i < n; i++)
+    {
+        cout<<a[i]<<" ";
+    }
+    cout<<" \n\n Main Screen?(y/n): ";
+    char d;
+    cin>>d;
+    if (d =='Y' || d =='y')
+    {
+        main();
+    }
+    return 0;
+}
 
 int main(){
     system("cls");
@@ -152,6 +173,9 @@ int main(){
         break;
     case 4:
         deletion(n, a);
+        break;
+    case 5:
+        Update(n, a);
         break;
     default:
         break;
