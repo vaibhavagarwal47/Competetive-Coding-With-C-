@@ -84,6 +84,37 @@ int Sort(int n, int a[100]){
     return 0;
     
 }
+int deletion(int n, int a[100]){
+    cout<<"\n\n Enter the number you want to delete: ";
+    int del;
+    cin>>del;
+    for (int i = 0; i < n; i++)
+    {
+        if(del == a[i]){
+            int temp = a[i];
+            for (int j = i; j < n; j++)
+            {
+                a[j] = a[j+1];
+            }
+            n--;
+        }
+    }
+    cout<<"\n\n After the deletion: ";
+    for (int i = 0; i < n; i++)
+    {
+        cout<<a[i]<<" ";
+    }
+        cout<<" \n\n Main Screen?(y/n): ";
+    char d;
+    cin>>d;
+    if (d =='Y' || d =='y')
+    {
+        main();
+    }
+    return 0;
+    
+    
+}
 
 int main(){
     system("cls");
@@ -118,6 +149,9 @@ int main(){
         break;
     case 3:
         Sort(n, a);
+        break;
+    case 4:
+        deletion(n, a);
         break;
     default:
         break;
