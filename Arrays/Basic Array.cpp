@@ -136,6 +136,55 @@ int Update(int n, int a[100]){
     }
     return 0;
 }
+int Merge(int n, int a[100]){
+   int i = 0, j = 0, k = 0; 
+   int n1 = n, n2, arr1[100], arr2[100], arr3[100];
+   for (int i = 0; i < n; i++)
+   {
+       arr1[i] = ar[i];
+   }
+   
+   cout<<"\n\n Enter the size of second array: ";
+   cin>>n2;
+   cout<<"\n\n Enter the array: ";
+   for (int i = 0; i < n2; i++)
+   {
+       cin>>arr2[i];
+   }
+
+    while (i<n1 && j <n2) 
+    { 
+
+        if (arr1[i] < arr2[j]) 
+            arr3[k++] = arr1[i++]; 
+        else
+            arr3[k++] = arr2[j++]; 
+    } 
+
+    while (i < n1) 
+        arr3[k++] = arr1[i++]; 
+
+    while (j < n2) 
+        arr3[k++] = arr2[j++]; 
+    
+    for (int z = 0; z<k; i++)
+    {
+        cout<<arr3[z]<<" ";
+    }
+    
+    
+
+    cout<<" \n\n Main Screen?(y/n): ";
+    char d;
+    cin>>d;
+    if (d =='Y' || d =='y')
+    {
+        main();
+    }
+    return 0;    
+    
+    
+}
 
 int main(){
     system("cls");
@@ -177,6 +226,8 @@ int main(){
     case 5:
         Update(n, a);
         break;
+    case 6:
+        Merge(n, a);
     default:
         break;
     }
