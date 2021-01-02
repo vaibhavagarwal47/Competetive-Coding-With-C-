@@ -3,14 +3,14 @@
 using namespace std;
 
 int main(){
-  int n;
+  int n, size, sum=0;
+  int a, b;
   cin>>n;
-  
   while(n--){
-    int a, b, arr[10];
-    arr[]
-    
+    cin>>a>>b;
+    sum=a+b;
+    cout<<sum<<endl;
     }
-
+  
   return 0;
   }
