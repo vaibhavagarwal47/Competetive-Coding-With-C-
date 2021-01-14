@@ -58,7 +58,9 @@ cout<<"Enter the choice:- ";
 cin>>n;
 switch(n){
 	case 1:selection_sort(arr,size);
+        break;
 	case 2:bubble_sort(arr,size);
+        break;
     case 3:insertion_sort(arr,size);
 }
 return 0;
