@@ -311,6 +311,8 @@ int main(){
 	return 0;
 }
 */
+/* 
+book ques 15,16,17,18,19,20			problem aa rhi hai
 
 #include<iostream>
 using namespace std;
@@ -344,6 +346,26 @@ void diagonal_below(int n,int a[100][100],int sum){
 	}
 	cout<<sum<<endl;
 }
+void isuppertriangle(int n,int a[100][100]){
+	for(int i=0;i<n;i++)
+		for(int j=0;j<n;j++)
+			if(i>j && a[i][j]==0)
+		
+	
+	cout<<"1";
+}
+void islowertriangle(int n,int a[100][100]){
+	for(int i=0;i<n;i++)
+		for(int j=0;j<n;j++)
+			if(i<j && a[i][j]==0)
+				cout<<"1";
+}
+void summetric(int n,int a[100][100]){
+	for(int i=0;i<n;i++)
+		for(int j=0;j<n;j++)
+			if(a[i][j]==a[j][i])
+				cout<<"symmetric";
+}
 
 int main(){
 	int n,a[100][100],sum=0,x;
@@ -362,6 +384,342 @@ int main(){
 		break;
 		case 3:diagonal_below(n,a,sum);
 		break;
+		case 4:isuppertriangle(n,a);
+		break;
+		case 5:islowertriangle(n,a);
+		break;
+		case 6:summetric(n,a);
+		break;
 	}
 	return 0;
 }
+*/
+
+/*
+book ques 21.
+
+#include<iostream>
+using namespace std;
+int main(){
+	int a,arr1[100][100],arr2[100][100];
+	cin>>a;
+	for(int i=0;i<a;i++){
+		for(int j=0;j<a;j++){
+		cin>>arr1[i][j];
+		}
+	}
+	for(int i=0;i<a;i++){
+		for(int j=0;j<a;j++){
+		cin>>arr2[i][j];
+		}
+	}
+	int x=2,y=3;
+	for(int i=0;i<a;i++){
+		for(int j=0;j<a;j++){
+		arr1[i][j]= x * arr1[i][j];
+		arr2[i][j]= y * arr2[i][j];
+		}
+	}
+	for(int i=0;i<a;i++){
+		for(int j=0;j<a;j++){
+			cout<<arr1[i][j]+arr2[i][j]<<" ";
+		}
+		cout<<endl;
+	}
+	return 0;
+}
+*/
+/*
+book ques 23
+#include<iostream>
+using namespace std;
+int main(){
+	int n,a[100],r,rem;
+	cin>>n;
+	r= sizeof(n);
+	for(int i=0;i<r;i++){
+	rem = n%10;
+	a[i]=rem;
+	cout<<a[i]<<endl;
+	n=n/10;
+	}
+	return 0;
+}
+*/
+/*
+binary search
+
+#include<iostream>
+using namespace std;
+int main(){
+	int n,a[1000],start,end,mid,val,flag=0;;
+	cin>>n;
+	for(int i=0;i<n;i++){
+		cin>>a[i];
+	}
+	cin>>val;
+	start = a[0];
+	end = a[n-1];
+	while(start<=end){
+		mid = (start + end)/2;
+		if(val==mid){
+			cout<<"element found";
+			flag=1;
+			break;
+		}
+		else if(val<mid){
+			end  = mid-1;
+		}
+		else if(val>mid){
+			start = mid+1;
+		}
+	}
+	if(flag==0){
+		cout<<"element not found";
+	}
+
+	return 0;
+}
+*/
+/* 
+linear search
+
+#include<iostream>
+using namespace std;
+int main(){
+	int n,a[1000],val,flag=0;
+	cin>>n;
+	for(int i=0;i<n;i++){
+		cin>>a[i];
+	}
+	cin>>val;
+	for(int i=0;i<n;i++){
+		if(a[i]==val){
+			flag=1;
+			cout<<"element found at location "<<i;
+			break;
+		}
+	}
+	if(flag==0){
+		cout<<"element not found";
+	}
+	return 0;
+}
+*/
+/*
+selection sort
+
+#include<iostream>
+using namespace std;
+int main(){
+	int n,a[1000],temp;
+	cin>>n;
+	for(int i=0;i<n;i++){
+		cin>>a[i];
+	}
+	for(int i=0;i<n;i++){
+		if(a[i]>a[i+1]){
+			temp = a[i];
+			a[i]=a[i+1];
+			a[i+1]=temp;
+		}
+	}
+	for(int i=0;i<n;i++){
+		cout<<a[i];
+	}
+	return 0;
+}
+*/
+/*
+bubble sort
+
+#include<iostream>
+using namespace std;
+int main(){
+	int n,a[1000],temp;
+	cin>>n;
+	for(int i=0;i<n;i++){
+		cin>>a[i];
+	}
+	for(int i=0;i<n;i++){
+		for(int j=0;j<n-i-1;j++){
+			if(a[j]>a[j+1]){
+				temp = a[j];
+				a[j]=a[j+1];
+				a[j+1]=temp;
+			}
+		}
+	}
+	for(int i=0;i<n;i++){
+		cout<<a[i]<<" ";
+	}
+	return 0;
+}
+*/
+/*
+insertion sort dobara krna hai
+
+#include<iostream>
+using namespace std;
+int main(){
+	int n,a[1000],temp;
+	cin>>n;
+	for(int i=0;i<n;i++){
+		cin>>a[i];
+	}
+	for(int i=0;i<n;i++){
+		for(int j=1;j<n;j++){
+			if(a[i]>a[j] && i!=j){
+				temp = a[i];
+				a[i]=a[j];
+				a[j]=temp;
+			}
+		}
+	}
+	for(int i=0;i<n;i++){
+		cout<<a[i]<<" ";
+	}
+	return 0;
+}
+*/
+/*
+maximum sum  of subarrays
+#include<iostream>
+using namespace std;
+int main(){
+	int n,a[1000],sum=0,maxsum=0;
+	cin>>n;
+	for(int i=0;i<n;i++){
+		cin>>a[i];
+	}
+	for(int i=0;i<n;i++){
+		for(int j=i;j<n;j++){
+			sum=0;
+			for(int k=i;k<=j;k++){
+				sum = sum+a[k];
+				
+			}
+			if(sum>maxsum){
+				maxsum=sum;
+			}
+			cout<<sum<<endl;
+		}
+	}
+	cout<<maxsum;
+	return 0;
+}
+*/
+/*
+wave print of 2d array
+
+#include<iostream>
+using namespace std;
+int main(){
+	int n,m,a[1000][1000];
+	cin>>n;
+	cin>>m;
+	for(int i=0;i<n;i++){
+		for(int j=0;j<m;j++){
+			cin>>a[i][j];
+		}
+	}
+	for(int j=0;j<m;j++){
+		if(j%2==0){
+			for(int i=0;i<n;i++){
+				cout<<a[i][j]<<" ";
+			}
+		}
+		else 
+			for(int i=n-1;i>=0;i--){
+				cout<<a[i][j]<<" ";
+		}
+	}
+	return 0;
+}
+*/
+
+/*
+#include<iostream>
+using namespace std;
+void spiral_print(int n,int m,int a[1000][1000]){
+	int sr=0,er=m-1,sc=0,ec=n-1;
+	while(sr<=er && sc<=ec){
+		for(int i=sc;i<=ec;i++){
+			cout<<a[sr][i]<<" ";
+		}
+		sr++;
+		for(int i=sr;i<=er;i++){
+			cout<<a[i][ec]<<" ";
+		}
+		ec--;
+		if(er>sr){
+		for(int i=ec;i>=sc;i--){
+			cout<<a[er][i]<<" ";
+		}
+        
+		er--;
+        }
+		if(ec>sc){
+		for(int i=er;i>=sr;i--){
+			cout<<a[i][sc]<<" ";
+		}
+        
+		sc++;
+        }
+		}
+	}
+int main(){
+	int n,m,a[1000][1000];
+	cin>>n;
+	cin>>m;
+	for(int i=0;i<n;i++){
+		for(int j=0;j<m;j++){
+			cin>>a[i][j];
+		}
+	}
+	spiral_print(n,m,a);
+return 0;
+}
+*/
+
+/*
+CB STRING QUES 1. 
+#include<iostream>
+#include<cstring>
+#include<algorithm>
+using namespace std;
+int main(){
+  char a[10];
+  cin>>a;
+  for(int i=0; i<strlen(a)-1;i++)
+  {
+    cout<<a[i];
+    cout<<a[i+1] - a[i]; 
+  }
+  cout<<a[strlen(a)-1];
+  return 0;
+  }
+
+*/
+/*
+CB STRING QUES 1. 
+
+#include<iostream>
+#include<string>
+
+using namespace std;
+
+int main(){
+  char a[10];
+  cin>>a;
+  int i=0;
+  for(i=0;a[i+1]!='\0' ; i++)
+  {
+    int diff = a[i+1]-a[i];
+    cout<<a[i]<<diff;
+  }
+  cout<<a[i];
+  return 0;
+  }
+  */
+
