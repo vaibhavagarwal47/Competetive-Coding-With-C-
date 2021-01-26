@@ -1,3 +1,4 @@
+/*
 #include <iostream>
 #include<cstring>
 using namespace std;
@@ -18,8 +19,8 @@ int main() {
         }
     }
 }
-
-
+*/
+/*
 #include <iostream>
 #include<cstring>
 using namespace std;
@@ -40,9 +41,9 @@ int main() {
         }
     }
 }
+*/
 
-
-
+/*
 
 #include <iostream>
 #include<cstring>
@@ -62,10 +63,10 @@ int main() {
         cout<<b[0]<<". ";
     }
 }
+*/
 
 
-
-
+/*
 #include <iostream>
 #include<cstring>
 using namespace std;
@@ -90,8 +91,8 @@ int main() {
     cout<<lar;
     return 0;
 }
-
-
+*/
+/*
 #include <iostream>
 #include<cstring>
 using namespace std;
@@ -108,5 +109,72 @@ int main() {
     }
     b[j]='\0';
     puts(b);
+        return 0;
+}
+*/
+
+/*
+#include <iostream>
+#include<cstring>
+using namespace std;
+int main() {
+    char a[1000],b[1000],c[100];
+    int count=0;
+    cin.getline(a,1000,'$');
+    cin>>c;
+    for(int i=0;i<strlen(a);i++){
+        strcpy(b," ");
+        int j=0;
+        while(a[i]!=' ' && i<strlen(a)){
+            b[j]=a[i];
+            j++;
+            i++;
+        }
+        b[j]='\0';
+        if(strcmp(b,c)==0){
+            count++;
+        }
+    }
+    cout<<count;
+}
+*/
+
+/*
+#include <iostream>
+#include<cstring>
+using namespace std;
+int main() {
+    char a[1000],b[1000],c[100];
+    cin.getline(a,1000,'$');
+    cin>>c;
+    for(int i=0;i<strlen(a);i++){
+        strcpy(b," ");
+        int j=0;
+        while(a[i]!=' ' && i<strlen(a)){
+            b[j]=a[i];
+            j++;
+            i++;
+        }
+        b[j]='\0';
+        if(strcmp(b,c)==0){
+           puts(b);
+        }
+    }
+}
+*/
+
+#include <iostream>
+#include<cstring>
+using namespace std;
+int main() {
+    char a[1000];
+    cin.getline(a,1000,'$');
+    for(int i=0;i<strlen(a);i++){
+        if(a[i]==' '){
+            a[i] = a[i+1];
+            i++;
+        }
+        cout<<a[i];
+    }
         return 0;
 }
