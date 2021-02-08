@@ -143,3 +143,31 @@ int main() {
     return 0;
 }
 */
+/*
+
+//count how many set bits are in a range of numbers using stl function
+
+#include <iostream>
+#include<algorithm>
+using namespace std;
+int main() 
+{
+    int n,x,y,number;
+    cin>>n;
+    for(int i=0;i<n;i++)
+    {
+        cin>>x>>y;
+        int ans = 0;
+        for(int j=x;j<=y;j++)
+        {
+            number = j;
+              ans = ans + __builtin_popcount(number);
+        }
+        cout<<ans<<endl;
+    }
+    return 0;
+}
+*/
+/*
+
+//
