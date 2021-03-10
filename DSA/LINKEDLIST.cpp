@@ -42,6 +42,8 @@ int main()
 }
 */
 
+
+/*
 class node
 {
 public:
@@ -73,4 +75,52 @@ int main()
 		head->next = start;
 		start = head;
 	}
+}
+*/
+/*
+class node
+{
+public:
+	int head;
+	node *next;
+};
+int main()
+{
+	node *second;
+	second = new node;
+	second->head = 12;
+	second->next = NULL;
+	cout<<second->head;
+
+}
+*/
+
+class newlist
+{
+public:
+	int value;
+	newlist *next;
+	newlist(int value1,newlist *next1 = NULL)
+	{
+		value = value1;
+		next = next1;
+	}
+};
+int main()
+{
+	int number;
+	int times;
+	newlist *timesnumber = NULL;
+	cin>>times;
+	while(times--)
+	{
+		cin>>number;
+		timesnumber = new newlist(number,timesnumber);
+	}
+	newlist *ptr = timesnumber;
+	while(ptr!=NULL)
+	{
+	cout<<ptr->value<<" ";
+	ptr = ptr->next;
+}
 }

@@ -63,6 +63,8 @@ int main()
 	cout<<num;
 }
 */
+//using empty vector checker and capacity checker functions of vector
+/*
 int main()
 {
 	vector<int> a;
@@ -87,3 +89,4 @@ int main()
 	cout<<endl<<l;
 	cout<<num;
 }
+*/

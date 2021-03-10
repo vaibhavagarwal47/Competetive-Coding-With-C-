@@ -1,5 +1,6 @@
 #include<iostream>
 #include<windows.h>
+#include<string>
 using namespace std;
 void displayinfo()
 {
@@ -59,7 +60,7 @@ int main()
 			if(userpoints=0)
 			{
 				enterchar(choice1,choice2,a[][],choice1);
-				userpoints = ++userpoints;
+				
 			}
 			
 		}
